@@ -14,7 +14,7 @@ How to run on kubernetes cluster:
 $ kubectl apply -f hello-app.yaml
 ```
 
-Now, assuming we found out the IP address and the port that mapped to port 80 on the container, in a browser we can make a request to the webserver and get the page below: ![hello](hello.png)
+Now, assuming we found out the IP address and the port that mapped to port 80 on the container, in a browser we can make a request to the webserver and get the page below: ![hello](hello-k8s.png)
 
 A plain text version of the image is available as `ikae/hello:plain-text`. This version returns the same information in the plain text format:
 ```
