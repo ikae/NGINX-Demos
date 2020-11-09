@@ -1,16 +1,22 @@
 
 # NGINX webserver that serves a simple page containing its hostname, IP address and port as wells as the request URI and the local time of the webserver.
+# With Kubernetes Pod's Environment Supported. for Test Load Balancer refer [Expose Pod Information to Containers Through Environment Variables](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)
 
-The images are uploaded to Docker Hub -- https://hub.docker.com/r/nginxdemos/hello/.
+The images are uploaded to Docker Hub -- https://hub.docker.com/r/ikae/hello/.
 
-How to run:
+How to run on docker:
 ```
-$ docker run -P -d nginxdemos/hello
+$ docker run -P -d ikae/hello
+```
+
+How to run on kubernetes cluster:
+```
+$ kubectl apply -f hello-app.yaml
 ```
 
 Now, assuming we found out the IP address and the port that mapped to port 80 on the container, in a browser we can make a request to the webserver and get the page below: ![hello](hello.png)
 
-A plain text version of the image is available as `nginxdemos/hello:plain-text`. This version returns the same information in the plain text format:
+A plain text version of the image is available as `ikae/hello:plain-text`. This version returns the same information in the plain text format:
 ```
 $ curl <ip>:<port>
 Server address: 172.17.0.2:80
